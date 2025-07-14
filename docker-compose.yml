@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  english-site:
+    build:
+      context: ./english #code directory
+      #dockerfile: ./Dockerfile
+    container_name: english_site_container
+    image: english_site_img
+    ports:
+      - "8081:80"
+    restart: always
+
+  korean-site:
+    build:
+      context: ./korean #code directory
+      #dockerfile: ./Dockerfile
+    container_name: korean_site_container
+    image: korean_site_img
+    ports:
+      - "8082:80"
+    restart: always
+
+#container port 8081 for eng to server nginx at port 80
+#container port 8082 for Korea to server nginx at port 80
