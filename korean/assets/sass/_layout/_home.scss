@@ -1,0 +1,1090 @@
+/* font */
+@font-face {
+	font-family: "Satoshi";
+	src: url("../../fonts/Satoshi/Satoshi-Light.otf") format("opentype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi";
+	src: url("../../fonts/Satoshi/Satoshi-Regular.otf") format("opentype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi";
+	src: url("../../fonts/Satoshi/Satoshi-Medium.otf") format("opentype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi";
+	src: url("../../fonts/Satoshi/Satoshi-Bold.otf") format("opentype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi";
+	src: url("../../fonts/Satoshi/Satoshi-Black.otf") format("opentype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+p {
+	margin: 0;
+}
+// ========== hero area ================
+
+#hero-area {
+	.content-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+		.contents {
+			padding: 100px 0;
+			max-width: 784px;
+			display: flex;
+			flex-direction: column;
+			gap: 50px;
+			justify-content: center;
+			align-items: center;
+			@include breakpoint(max-xl) {
+				gap: 32px;
+			}
+			@include breakpoint(max-sm) {
+				gap: 20px;
+			}
+		}
+	}
+	h1 {
+		color: #000;
+		text-align: center;
+		font-size: 80px;
+		font-weight: 700;
+		line-height: 127.5%;
+		letter-spacing: -1.6px;
+
+		@include breakpoint(max-xl) {
+			font-size: 64px;
+		}
+		@include breakpoint(max-md) {
+			font-size: 48px;
+		}
+		@include breakpoint(max-sm) {
+			font-size: 32px;
+		}
+	}
+	button {
+		color: #fff;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%;
+		text-transform: uppercase;
+		background-color: #000;
+		border: none;
+		outline: none;
+		padding: 19px 27px;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		@include breakpoint(max-md) {
+			padding: 16px 24px;
+		}
+		img {
+			transition: all ease-in-out 0.3s;
+		}
+		&:hover {
+			img {
+				padding-left: 8px;
+				margin-right: -8px;
+			}
+		}
+	}
+	p {
+		color: #1f1f1e;
+		text-align: center;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%;
+		max-width: 611px;
+		margin-bottom: 0 !important;
+		display: flex;
+		flex-direction: column;
+		@include breakpoint(max-xl) {
+			font-size: 18px;
+			display: block;
+		}
+		@include breakpoint(max-lg) {
+			font-size: 16px;
+		}
+	}
+}
+// ========== hero area ================
+
+//==================category-area================
+#category-area {
+	.category-container {
+		// max-width: 1440px;
+		margin: 0 auto;
+	}
+	.category-bar {
+		display: flex;
+		align-items: center;
+		gap: 58px;
+		padding: 14px;
+		@include breakpoint(max-lg) {
+			gap: 40px;
+		}
+		@include breakpoint(max-sm) {
+			gap: 20px;
+		}
+	}
+
+	span {
+		color: #fff;
+		font-size: 21px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%;
+		opacity: 0.77;
+		text-decoration: none;
+		display: block;
+		@include breakpoint(max-lg) {
+			font-size: 18px;
+		}
+		@include breakpoint(max-sm) {
+			font-size: 16px;
+		}
+	}
+
+	.marquee-wrapper {
+		background: #333;
+	}
+	img {
+		width: 100%;
+	}
+}
+//==================category-area================
+
+// ================ work area =================
+#work-area {
+	overflow: hidden;
+	padding: 100px 0;
+	@include breakpoint(max-xl) {
+		padding: 60px 0;
+	}
+
+	.content-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+		@include breakpoint(max-md) {
+			gap: 16px;
+		}
+		@include breakpoint(max-sm) {
+			gap: 8px;
+		}
+	}
+
+	.contents-row-item {
+		display: flex;
+	}
+
+	.card-item {
+		position: relative;
+		max-width: 536px;
+		min-width: 536px;
+		overflow: hidden;
+		cursor: pointer;
+		margin: 0 14px;
+
+		@include breakpoint(max-xl) {
+			max-width: 436px;
+			min-width: 436px;
+		}
+		@include breakpoint(max-md) {
+			max-width: 336px;
+			min-width: 336px;
+			margin: 0 8px;
+		}
+		@include breakpoint(max-sm) {
+			max-width: 256px;
+			min-width: 256px;
+			margin: 0 4px;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+			transition: transform 0.3s ease;
+		}
+
+		&:hover img {
+			transform: scale(1.05);
+		}
+
+		.overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0) -7.21%,
+				rgba(0, 0, 0, 0.56) 84.17%
+			);
+			opacity: 0;
+			transition: opacity 0.3s ease;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			padding: 32px;
+
+			h3 {
+				margin: 0 0 10px;
+				color: #fff;
+				font-size: 26px;
+				font-weight: 700;
+				line-height: 140%;
+				letter-spacing: 0.13px;
+				@include breakpoint(max-xl) {
+					font-size: 22px;
+				}
+				@include breakpoint(max-sm) {
+					font-size: 18px;
+				}
+			}
+
+			p {
+				margin: 0;
+				color: #d9d9d9;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 140%;
+
+				@include breakpoint(max-sm) {
+					font-size: 16px;
+				}
+			}
+		}
+
+		&:hover .overlay {
+			opacity: 1;
+		}
+	}
+
+	h1 {
+		color: #000;
+		text-align: center;
+		font-size: 61px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+		letter-spacing: 0.305px;
+		margin-bottom: 20px;
+
+		@include breakpoint(max-xl) {
+			font-size: 42px;
+		}
+		@include breakpoint(max-sm) {
+			font-size: 32px;
+			margin-bottom: 16px;
+		}
+	}
+	.container p {
+		color: #575757;
+		text-align: center;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%;
+		letter-spacing: 0.1px;
+		max-width: 590px;
+		margin: 0 auto;
+		margin-bottom: 65px;
+		@include breakpoint(max-xl) {
+			font-size: 18px;
+			margin-bottom: 40px;
+		}
+		@include breakpoint(max-sm) {
+			font-size: 16px;
+			margin-bottom: 30px;
+		}
+	}
+}
+// ================ work area =================
+
+// ============== service-area ================
+#service-area {
+	padding-bottom: 210px;
+	@include breakpoint(max-xl) {
+		padding-bottom: 120px;
+	}
+	@include breakpoint(max-sm) {
+		padding-bottom: 80px;
+	}
+	.banner-img {
+		width: 100%;
+		min-height: 130px;
+	}
+
+	h1 {
+		color: #141414;
+		text-align: center;
+		font-size: 64px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 119.687%;
+		letter-spacing: -0.64px;
+		margin-top: 60px;
+		@include breakpoint(max-xl) {
+			font-size: 42px;
+			margin-top: 40px;
+		}
+		@include breakpoint(max-sm) {
+			margin-top: 30px;
+			font-size: 32px;
+		}
+	}
+	h4 {
+		color: #1c1c37;
+		font-size: 26px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 153.846%;
+		letter-spacing: -0.78px;
+		@include breakpoint(max-md) {
+			text-align: center;
+			font-size: 20px;
+		}
+	}
+	p {
+		color: #333;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 160%;
+		letter-spacing: -0.54px;
+		margin: 0;
+		max-width: 363px;
+		@include breakpoint(max-md) {
+			text-align: center;
+			font-size: 16px;
+		}
+	}
+
+	.services {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 88px;
+		margin-top: 100px;
+
+		@include breakpoint(max-xl) {
+			margin-top: 60px;
+			gap: 40px;
+		}
+		@include breakpoint(max-sm) {
+			margin-top: 40px;
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	.service {
+		display: flex;
+		align-items: flex-start;
+		gap: 24px;
+		@include breakpoint(max-md) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 16px;
+		}
+	}
+	.icon-wrapper {
+		border-radius: 7px;
+		background: #333;
+		padding: 10px;
+		width: 60px;
+		height: 60px;
+		aspect-ratio: 1/1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.text-content {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		@include breakpoint(max-xl) {
+			gap: 4px;
+		}
+		@include breakpoint(max-md) {
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
+// ============== service-area ================
+
+// ================ skills area ===============
+#skills-area {
+	position: relative;
+	padding-bottom: 160px;
+	@include breakpoint(max-xl) {
+		padding-bottom: 100px;
+	}
+	@include breakpoint(max-sm) {
+		padding-bottom: 60px;
+	}
+
+	h1 {
+		color: #000;
+		text-align: center;
+		font-size: 60px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+		letter-spacing: 0.3px;
+		max-width: 684px;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		position: relative;
+		z-index: 2;
+		@include breakpoint(max-xl) {
+			font-size: 48px;
+		}
+		@include breakpoint(max-md) {
+			font-size: 36px;
+			margin-bottom: 16px;
+		}
+		@include breakpoint(max-sm) {
+			font-size: 32px;
+		}
+	}
+
+	p.heading-des {
+		color: #575757;
+		text-align: center;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%;
+		letter-spacing: 0.1px;
+		position: relative;
+		z-index: 2;
+		@include breakpoint(max-xl) {
+			font-size: 18px;
+		}
+
+		@include breakpoint(max-sm) {
+			font-size: 16px;
+		}
+	}
+
+	.grid-contents {
+		position: relative;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 12px;
+		margin-top: 50px;
+
+		@include breakpoint(max-xl) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(max-sm) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	.grid-item {
+		border-radius: 13px;
+		border: 1px solid rgba(255, 255, 255, 0.8);
+		background: rgba(255, 255, 255, 0.32);
+		backdrop-filter: blur(20.700000762939453px);
+		padding: 25px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		grid-column: span 2;
+		@include breakpoint(max-xl) {
+			grid-column: span 1;
+		}
+		@include breakpoint(max-sm) {
+			padding: 16px;
+		}
+		.content {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+		}
+
+		h3 {
+			color: #000;
+			font-size: 22px;
+			font-weight: 700;
+			line-height: 140%;
+			letter-spacing: 0.11px;
+			text-align: center;
+			@include breakpoint(max-xl) {
+				font-size: 20px;
+			}
+
+			@include breakpoint(max-sm) {
+				font-size: 18px;
+			}
+		}
+		p {
+			color: #575757;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 140%;
+			text-align: center;
+			@include breakpoint(max-xl) {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.grid-item.item-1 {
+		grid-row: span 2;
+		@include breakpoint(max-xl) {
+			grid-row: span 1;
+		}
+	}
+
+	.text-content {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+	.grid-item.item-2 {
+		grid-column: span 4;
+		@include breakpoint(xl) {
+			.content {
+				flex-direction: row;
+				align-items: center;
+			}
+			.text-content {
+				flex-direction: row;
+				align-items: center;
+			}
+			h3 {
+				white-space: nowrap;
+				min-width: 250px;
+				text-align: left;
+			}
+			p {
+				text-align: left;
+			}
+		}
+		@include breakpoint(max-xl) {
+			grid-column: span 1;
+		}
+	}
+
+	.grid-item.item-1,
+	.grid-item.item-5 {
+		@include breakpoint(xl) {
+			.content {
+				align-items: flex-start;
+			}
+			h3,
+			p {
+				text-align: left;
+			}
+		}
+	}
+
+	.grid-item.grid-item.item-8,
+	.grid-item.grid-item.item-9 {
+		@include breakpoint(xl) {
+			grid-column: span 3;
+			.content {
+				align-items: flex-start;
+			}
+			h3,
+			p {
+				text-align: left;
+			}
+		}
+	}
+
+	.circle-bg {
+		border-radius: 880px;
+		background: rgba(51, 51, 51, 0.15);
+		filter: blur(80px);
+		width: 61%;
+		aspect-ratio: 1/1;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+// ================ skills area ===============
+
+// ============ Testimonial area ==============
+#testimonial-area {
+	padding: 60px 0;
+	@include breakpoint(max-xl) {
+		padding: 30px 0;
+	}
+	@include breakpoint(max-sm) {
+		padding: 20px 0;
+	}
+	.container {
+		h1 {
+			color: #141414;
+			text-align: center;
+			font-size: 64px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 119.687%;
+			letter-spacing: -0.64px;
+			margin-bottom: 20px;
+			@include breakpoint(max-xl) {
+				font-size: 48px;
+			}
+			@include breakpoint(max-md) {
+				font-size: 36px;
+				margin-bottom: 16px;
+			}
+			@include breakpoint(max-sm) {
+				font-size: 32px;
+			}
+
+			span {
+				position: relative;
+				img {
+					position: absolute;
+					top: 100%;
+					left: 0;
+					max-width: 80%;
+				}
+			}
+		}
+		p {
+			color: #575757;
+			text-align: center;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 140%;
+			letter-spacing: 0.1px;
+			@include breakpoint(max-xl) {
+				font-size: 18px;
+			}
+
+			@include breakpoint(max-sm) {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.swiper-wrapper {
+		padding-top: 80px;
+		@include breakpoint(max-xl) {
+			padding-top: 60px;
+		}
+		@include breakpoint(max-sm) {
+			padding-top: 40px;
+		}
+	}
+	.swiper {
+		width: 100%;
+	}
+	.swiper-slide {
+		padding: 56px 48px;
+		padding-top: 72px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		border-radius: 16px;
+		background: #fff;
+		position: relative;
+		@include breakpoint(max-xl) {
+			padding: 42px 32px;
+			padding-top: 56px;
+		}
+		@include breakpoint(max-sm) {
+			padding: 32px 24px;
+			padding-top: 48px;
+		}
+		img.qoute {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100px;
+
+			@include breakpoint(max-xl) {
+				width: 80px;
+			}
+			@include breakpoint(max-sm) {
+				width: 60px;
+			}
+		}
+	}
+	.swiper-slide p {
+		color: #171717;
+		font-size: 26px;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: -0.26px;
+		@include breakpoint(max-xl) {
+			font-size: 22px;
+		}
+		@include breakpoint(max-sm) {
+			font-size: 18px;
+		}
+	}
+	.swiper-slide h5 {
+		color: #171717;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 180%;
+		@include breakpoint(max-sm) {
+			font-size: 16px;
+		}
+	}
+	.swiper-slide h6 {
+		color: #171717;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 140%;
+		opacity: 0.7;
+		@include breakpoint(max-sm) {
+			font-size: 12px;
+		}
+	}
+
+	.swiper-slide .content {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.star-group {
+		display: flex;
+		align-items: center;
+		gap: 2px;
+		img {
+			width: 25px;
+			@include breakpoint(max-sm) {
+				width: 18px;
+			}
+		}
+	}
+}
+
+// ====================== faq area ================
+#faq-area {
+	background: #fff;
+	box-shadow: 0px 68px 19px 0px rgba(150, 150, 150, 0),
+		0px 43px 17px 0px rgba(150, 150, 150, 0.01),
+		0px 24px 15px 0px rgba(150, 150, 150, 0.05),
+		0px 11px 11px 0px rgba(150, 150, 150, 0.09),
+		0px 3px 6px 0px rgba(150, 150, 150, 0.1);
+	padding: 155px 0;
+
+	@include breakpoint(max-xl) {
+		padding: 100px 0;
+	}
+	@include breakpoint(max-sm) {
+		padding: 60px 0;
+	}
+	.content-wrapper {
+		display: grid;
+		grid-template-columns: 415px 1fr;
+		gap: 78px;
+		@include breakpoint(max-xl) {
+			gap: 40px;
+			grid-template-columns: 350px 1fr;
+		}
+		@include breakpoint(max-lg) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	h2 {
+		color: #000;
+		font-size: 48px;
+		font-weight: 700;
+		line-height: 130%;
+		letter-spacing: 0.24px;
+		margin-bottom: 20px;
+		@include breakpoint(max-xl) {
+			font-size: 36px;
+		}
+		@include breakpoint(max-sm) {
+			font-size: 32px;
+			margin-bottom: 12px;
+		}
+	}
+	.left-side {
+		p {
+			color: #575757;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 140%;
+			max-width: 350px;
+			@include breakpoint(max-sm) {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.faq-accordion {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.faq-item {
+		position: relative;
+		border-radius: 13px;
+		border: 0.75px solid #d9d9d9;
+		background: #fff;
+		overflow: hidden;
+	}
+
+	.faq-question {
+		padding: 25px;
+		cursor: pointer;
+		position: relative;
+		@include breakpoint(max-sm) {
+			padding: 16px;
+		}
+	}
+
+	.faq-question span.question-text {
+		display: inline-block;
+		padding-right: 40px;
+		color: #000;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 140%;
+		letter-spacing: 0.1px;
+
+		@include breakpoint(max-xl) {
+			font-size: 18px;
+		}
+		@include breakpoint(max-sm) {
+			font-size: 16px;
+		}
+	}
+
+	.faq-question .icon {
+		position: absolute;
+		right: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		align-items: center;
+	}
+
+	.faq-question .icon-minus {
+		display: none;
+	}
+	.icon img {
+		width: 27px !important;
+		@include breakpoint(max-sm) {
+			width: 20px !important;
+		}
+	}
+
+	.faq-item.active .icon-plus {
+		display: none;
+	}
+
+	.faq-item.active .icon-minus {
+		display: inline;
+	}
+
+	.faq-answer {
+		display: none;
+		overflow: hidden;
+		color: #575757;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 140%;
+
+		@include breakpoint(max-sm) {
+			padding-left: 16px;
+			font-size: 14px;
+		}
+		.answer-content {
+			padding: 25px;
+			padding-top: 0;
+		}
+	}
+
+	.faq-item.active {
+		background: #f5f5f5;
+	}
+	.faq-item {
+		&.show {
+			.faq-answer {
+				display: block;
+			}
+		}
+	}
+	.faq-item.active .faq-answer {
+		padding: 0;
+		.answer-content {
+			@include breakpoint(max-sm) {
+				padding: 16px;
+				padding-top: 0;
+			}
+		}
+	}
+}
+// ====================== faq area ================
+
+// =================== cta area ================
+#cta-area {
+	background: #333;
+	position: relative;
+	padding: 105px 0;
+
+	@include breakpoint(max-xl) {
+		padding: 80px 0;
+	}
+	@include breakpoint(max-sm) {
+		padding: 50px 0;
+	}
+
+	h1 {
+		color: #fff;
+		text-align: center;
+		font-size: 64px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 119.687%;
+		letter-spacing: -0.64px;
+		margin-bottom: 20px;
+		@include breakpoint(max-xl) {
+			font-size: 48px;
+		}
+		@include breakpoint(max-md) {
+			font-size: 36px;
+			margin-bottom: 16px;
+		}
+		@include breakpoint(max-sm) {
+			font-size: 32px;
+		}
+	}
+	p {
+		color: #fff;
+		text-align: center;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%;
+		opacity: 0.8;
+		max-width: 80%;
+		margin: 0 auto;
+	}
+	form {
+		position: relative;
+		z-index: 2;
+		padding: 30px;
+		border-radius: 13px;
+		border: 0.75px solid var(--Gray-Stroke, #d9d9d9);
+		background: #fff;
+		max-width: 583px;
+		margin: 0 auto;
+		margin-top: 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		@include breakpoint(max-sm) {
+			padding: 20px;
+			margin-top: 24px;
+		}
+		.input_item {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+		}
+		label {
+			color: #1a1a1a;
+			font-size: 12px;
+			font-weight: 700;
+			line-height: 140%;
+		}
+		input {
+			border-radius: 12px;
+			border: 1px solid #bdbdbd;
+			background: #f8f8f8;
+			padding: 13px 16px;
+			width: 100%;
+			outline: none;
+			color: #1a1a1a;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 140%;
+			&::placeholder {
+				color: #888;
+			}
+		}
+		button {
+			border-radius: 13px;
+			background: #000;
+			box-shadow: 0px 4px 8px 0px rgba(101, 92, 128, 0.3);
+			color: #fff;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 140%;
+			padding: 13px 16px;
+			width: 100%;
+			display: block;
+			margin-top: 35px;
+			@include breakpoint(max-sm) {
+				margin-top: 15px;
+			}
+		}
+	}
+	img.mj-web-store {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+}
+// =================== cta area ================
+.intro-section {
+	position: relative;
+	overflow: hidden;
+	.intro-img {
+		position: absolute;
+		top: 13px;
+		left: 13px;
+		width: calc(100% - 26px);
+		pointer-events: none;
+		@include breakpoint(max-md) {
+			left: 50%;
+			transform: translateX(-50%);
+			width: 800px;
+		}
+	}
+	.content-wrapper {
+		position: relative;
+		z-index: 1;
+	}
+}
