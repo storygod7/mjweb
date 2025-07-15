@@ -723,7 +723,7 @@
 				디자인 프로젝트가 필요한 순간, 언제든 편하게 문의해주세요.
 			</p>
 		</div>
-		<form action="" class="wow zoomInSm">
+		<form action="" id="contact-form" class="wow zoomInSm">
 			<div class="input-item">
 				<label for="name">이름</label>
 				<input type="text" id="name" placeholder="홍길동" required />
@@ -804,6 +804,26 @@
 <script src="./assets/js/swiper-bundle.min.js"></script>
 <script src="./assets/js/wow.min.js"></script>
 <script src="./assets/js/main.js"></script>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const company = document.getElementById('company-name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const response = await fetch('http://mjwebstudio.co.kr/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, company, email, message }),
+    });
+
+    const result = await response.json();
+    alert(result.message);
+  });
+</script>
 
 <!-- Script -->
 </body>

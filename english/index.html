@@ -736,7 +736,7 @@
 				Tell us about your idea—or ask us anything. We’re here to help.
 			</p>
 		</div>
-		<form action="" class="wow zoomInSm">
+		<form action="" id="contact-form" class="wow zoomInSm">
 			<div class="input-item">
 				<label for="name">Name</label>
 				<input type="text" id="name" placeholder="Jane Doe" required />
@@ -794,7 +794,7 @@
             </div>
             <div class="item">
                 <h5>Address</h5>
-                <p>22-49, Donggyo-ro, Mapo-gu, Seoul, South Korea..</p>
+                <p>22-49, Donggyo-ro, Mapo-gu, Seoul, South Korea</p>
             </div>
             <div class="item">
                 <h5>Contact</h5>
@@ -818,6 +818,26 @@
 <script src="./assets/js/swiper-bundle.min.js"></script>
 <script src="./assets/js/wow.min.js"></script>
 <script src="./assets/js/main.js"></script>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const company = document.getElementById('company-name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const response = await fetch('http://mjwebstudio.co.kr/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, company, email, message }),
+    });
+
+    const result = await response.json();
+    alert(result.message);
+  });
+</script>
 
 <!-- Script -->
 </body>
