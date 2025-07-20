@@ -60,7 +60,7 @@
 						your brand.
 					</span>
 				</p>
-				<button class="wow fadeInDown">
+				<button class="wow fadeInDown" onclick="scrollToContactForm()">
 					Contact US
 					<img src="assets/img/icons/caret_right.svg" alt="" />
 				</button>
@@ -820,6 +820,14 @@
 <script src="./assets/js/main.js"></script>
 
 <script>
+  function scrollToContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    contactForm.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'center'
+    });
+  }
+
   document.getElementById('contact-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
