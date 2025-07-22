@@ -57,6 +57,29 @@
 		.kakao-chat a:hover {
 			text-decoration: none;
 		}
+		
+		#cta-area form textarea {
+			width: 100%;
+			padding: 15px 20px;
+			border: 1px solid #bdbdbd;
+			border-radius: 8px;
+			font-size: 16px;
+			font-family: var(--fonts);
+			background-color: #f8f8f8;
+			color: #333;
+			resize: vertical;
+			min-height: 120px;
+		}
+		
+		#cta-area form textarea:focus {
+			outline: none;
+			border-color: #ddd;
+			box-shadow: none;
+		}
+		
+		#cta-area form textarea::placeholder {
+			color: #999;
+		}
 	</style>
 </head>
 
@@ -774,12 +797,12 @@
 			</div>
 			<div class="input-item">
 				<label for="message">문의내용</label>
-				<input
-					type="text"
+				<textarea
 					id="message"
 					placeholder="귀하의 프로젝트나 질문을 적어주세요"
 					required
-				/>
+					rows="4"
+				></textarea>
 			</div>
 			<button>제출하기</button>
 		</form>
