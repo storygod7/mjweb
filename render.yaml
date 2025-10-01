@@ -18,7 +18,7 @@ services:
   - type: web
     runtime: docker
     name: japanese-site
-    rootDir: japanese
+    rootDir: Japanese
     plan: free
     autoDeploy: true
     healthCheckPath: /
