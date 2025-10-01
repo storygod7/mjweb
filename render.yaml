@@ -15,3 +15,11 @@ services:
     autoDeploy: true
     healthCheckPath: /
     region: singapore
+  - type: web
+    runtime: docker
+    name: japanese-site
+    rootDir: japanese
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    region: singapore
