@@ -1,0 +1,15 @@
+services:
+  - type: web
+    runtime: docker
+    name: english-site
+    rootDir: english
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+  - type: web
+    runtime: docker
+    name: korean-site
+    rootDir: korean
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
