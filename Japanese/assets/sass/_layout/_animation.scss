@@ -1,0 +1,28 @@
+@-webkit-keyframes zoomInSm {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes zoomInSm {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+.zoomInSm {
+	-webkit-animation-name: zoomInSm;
+	animation-name: zoomInSm;
+}
