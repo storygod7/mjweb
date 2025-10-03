@@ -743,24 +743,51 @@ gtag('config', 'G-EFZKBCPRBC');
 			<h1>プロジェクトがありますか？ ぜひご相談ください。</h1>
 			<p>アイデアをお聞かせいただくか、ご質問をお寄せください。私たちがお手伝いします。</p>
 		</div>
-		<form action="" id="contact-form" class="wow zoomInSm">
+		<form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="wow zoomInSm">
+			<input type="hidden" name="access_key" value="6b593e19-0796-42ca-8024-46b0277f3e8d">
+			<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+    		<input type="hidden" name="redirect" value="https://www.mjwebstudio.co.kr/thankyou.html">
+
 			<div class="input-item">
 				<label for="name">お名前</label>
-				<input type="text" id="name" placeholder="山田 太郎" required />
+				<input 
+					type="text" 
+					id="name" 
+					name="name"
+					placeholder="山田 太郎" 
+					required 
+				/>
 			</div>
 			<div class="input-item">
 				<label for="company-name">会社名（任意）</label>
-				<input type="text" id="company-name" placeholder="株式会社〇〇" />
+				<input 
+					type="text" 
+					id="company-name" 
+					name="company-name"
+					placeholder="株式会社〇〇" 
+				/>
 			</div>
 			<div class="input-item">
 				<label for="email">メールアドレス</label>
-				<input type="email" id="email" placeholder="taro@example.com" required />
+				<input 
+					type="email" 
+					id="email" 
+					name="email"
+					placeholder="taro@example.com" 
+					required 
+				/>
 			</div>
 			<div class="input-item">
 				<label for="message">メッセージ / お問い合わせ</label>
-				<textarea id="message" placeholder="プロジェクトやご質問についてお知らせください…" required rows="4"></textarea>
+				<textarea 
+					id="message" 
+					placeholder="プロジェクトやご質問についてお知らせください…" 
+					name="message"
+					required 
+					rows="4"
+				></textarea>
 			</div>
-			<button>送信</button>
+			<button type="submit">送信</button>
 		</form>
 
 		<img src="/assets/img/icons/mjwebstodio.svg" alt="" class="mj-web-store" />
@@ -820,33 +847,34 @@ gtag('config', 'G-EFZKBCPRBC');
     });
   }
 
-  document.getElementById('contact-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
+// Using in web3forms ...
+//   document.getElementById('contact-form').addEventListener('submit', async (e) => {
+//     e.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const company = document.getElementById('company-name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+//     const name = document.getElementById('name').value;
+//     const company = document.getElementById('company-name').value;
+//     const email = document.getElementById('email').value;
+//     const message = document.getElementById('message').value;
 
-    try {
-      const response = await fetch('https://www.mjwebstudio.co.kr/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, company, email, message }),
-      });
+//     try {
+//       const response = await fetch('https://www.mjwebstudio.co.kr/contact', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ name, company, email, message }),
+//       });
 
-      const result = await response.json();
+//       const result = await response.json();
       
-      if (response.ok) {
-        // Redirect to thank you page on successful submission
-        window.location.href = './thankyou.html';
-      } else {
-        alert(result.message || 'An error occurred while submitting. Please try again.');
-      }
-    } catch (error) {
-      alert('A network error occurred. Please try again.');
-    }
-  });
+//       if (response.ok) {
+//         // Redirect to thank you page on successful submission
+//         window.location.href = './thankyou.html';
+//       } else {
+//         alert(result.message || 'An error occurred while submitting. Please try again.');
+//       }
+//     } catch (error) {
+//       alert('A network error occurred. Please try again.');
+//     }
+//   });
 </script>
 
 <!-- Script -->
