@@ -804,10 +804,10 @@ gtag('config', 'G-EFZKBCPRBC');
 				Tell us about your idea—or ask us anything. We’re here to help.
 			</p>
 		</div>
-		<form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="wow zoomInSm">
+		<form id="contact-form" class="wow zoomInSm">
 			<input type="hidden" name="access_key" value="6b593e19-0796-42ca-8024-46b0277f3e8d">
 			<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-    		<input type="hidden" name="redirect" value="https://www.mjwebstudio.co.kr/thankyou.html">
+    		<!-- <input type="hidden" name="redirect" value="https://www.mjwebstudio.co.kr/thankyou.html"> -->
 
 			<div class="input-item">
 				<label for="name">Name</label>
@@ -848,7 +848,7 @@ gtag('config', 'G-EFZKBCPRBC');
 					rows="4"
 				></textarea>
 			</div>
-			<button type="submit">Send</button>
+			<button type="submit" id="form-send-btn">Send</button>
 		</form>
 
 		<img
@@ -905,42 +905,49 @@ gtag('config', 'G-EFZKBCPRBC');
 <script src="./assets/js/main.js"></script>
 
 <script>
-  function scrollToContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    contactForm.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'center'
-    });
-  }
+  	function scrollToContactForm() {
+    	const contactForm = document.getElementById('contact-form');
+    	contactForm.scrollIntoView({ 
+      		behavior: 'smooth',
+      		block: 'center'
+    	});
+  	}
 
-// Using web3forms api instead ...
-//   document.getElementById('contact-form').addEventListener('submit', async (e) => {
-//     e.preventDefault();
 
-//     const name = document.getElementById('name').value;
-//     const company = document.getElementById('company-name').value;
-//     const email = document.getElementById('email').value;
-//     const message = document.getElementById('message').value;
+	// Using web3fors api instead ...
+ 	const form = document.getElementById("contact-form");
+  	const btn = document.getElementById("form-send-btn");
 
-//     try {
-//       const response = await fetch('https://www.mjwebstudio.co.kr/contact', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ name, company, email, message }),
-//       });
+  	form.addEventListener("submit", async function (e) {
+    	e.preventDefault();
 
-//       const result = await response.json();
-      
-//       if (response.ok) {
-//         // Redirect to thank you page on successful submission
-//         window.location.href = './thankyou.html';
-//       } else {
-//         alert(result.message || 'An error occurred while submitting. Please try again.');
-//       }
-//     } catch (error) {
-//       alert('A network error occurred. Please try again.');
-//     }
-//   });
+    	// change button state
+    	btn.disabled = true;
+    	btn.innerText = "Sending...";
+
+	    try {
+    		const formData = new FormData(form);
+	      	const response = await fetch("https://api.web3forms.com/submit", {
+        		method: "POST",
+        		body: formData
+      		});
+
+      		const result = await response.json();
+
+      		if (response.ok) {
+        		// Redirect to thank you page
+        		window.location.href = "https://www.mjwebstudio.co.kr/thankyou.html";
+      		} else {
+        		alert(result.message || "Something went wrong. Please try again.");
+        		btn.disabled = false;
+        		btn.innerText = "Send";
+      		}
+    	} catch (error) {
+      		alert("Network error. Please try again.");
+      		btn.disabled = false;
+		    btn.innerText = "Send";
+    	}
+  	});
 </script>
 
 <!-- Script -->
